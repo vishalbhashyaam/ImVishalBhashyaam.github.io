@@ -70,6 +70,14 @@ document.addEventListener('DOMContentLoaded', () => {
   triggerAnimation(scrollElements)
 })
 
+function showModal() {
+  document.getElementById('imageModal').style.display = 'flex'
+}
+
+function closeModal() {
+  document.getElementById('imageModal').style.display = 'none'
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const themeToggleButton = document.createElement('button')
   themeToggleButton.textContent = 'Light Theme' // Since dark theme is default
