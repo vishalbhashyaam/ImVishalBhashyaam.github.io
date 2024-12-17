@@ -14,9 +14,14 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
-
 html {
     scroll-behavior: smooth;
+    /* Enable smooth scrolling */
+}
+
+section {
+    scroll-margin-top: 270px;
+    /* Adjust the margin so it doesn't overshoot */
 }
 p {
 
@@ -29,9 +34,9 @@ a, .btn{
     transition: all 300ms ease;
 }
 
-/*Desktop Nav */ 
+/*Desktop Nav */
 
-nav, 
+nav,
 .nav-links {
   display: flex;
 
@@ -148,8 +153,102 @@ transform: rotate(-45deg) translate(10px,-5px);
     transform: none;
 }
 
-#profile{
-    position: relative;
+#profile {
+    display: flex;
+    flex-direction: row;
+    /* Reset to side-by-side layout */
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    /* Adds spacing between image and text */
+    text-align: left;
+    padding: 4rem 2rem;
+    /* Balanced padding */
+    height: 90vh;
+    /* Full-height for better presentation */
+}
+
+.section__pic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    /* Fixed image width */
+    height: 300px;
+    /* Fixed image height */
+    overflow: hidden;
+    /* Keeps image contained */
+    border-radius: 50%;
+    /* Round image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Adds subtle shadow */
+}
+
+.section__pic-container img {
+    width: 100%;
+    /* Ensures image fills the container */
+    height: 100%;
+    object-fit: cover;
+    /* Prevents distortion */
+    transition: transform 0.3s ease-in-out;
+}
+
+.section__pic-container img:hover {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+}
+
+.section__text {
+    flex: 1;
+    /* Takes remaining space */
+    text-align: left;
+    /* Align text to the left */
+    max-width: 500px;
+    /* Ensures text doesn't stretch too wide */
+}
+
+.section__text__p1 {
+    font-size: 1.2rem;
+    color: #7dcfff;
+    /* Light blue for emphasis */
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.section__text__p2 {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.btn-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #7aa2f7;
+    background-color: #7aa2f7;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #bb9af7;
+    /* Purple hover */
+    border-color: #bb9af7;
+    color: #1a1b26;
 }
 
 /* Sections */
@@ -280,58 +379,133 @@ section{
 
 /* About Section */
 
+/* About Section - Light Theme */
 #about {
-    position: relative;
-}
-
-.about-containers{
-    gap: 2rem;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-}
-
-
-.about-details-container{
-
-    justify-content: center;
-    flex-direction: column;
-}
-
-.about-containers, .about-details-container{
-    display: flex;
-
-}
-
-.about-pic{
-    border-radius: 2rem;
-}
-
-.arrow{
-
-    position: absolute;
-    right: -5rem;
-    bottom: 2.5rem;
-}
-
-.details-container {
-    padding: 1.5rem;
-    flex: 1;
-    background: white;
-    border-radius: 2rem;
-    border: rgb(53,53,53) 0.1rem solid;
-    border-color: rgb(163, 163, 163);
     text-align: center;
+    padding: 4rem 2rem;
 }
 
 .section-container {
-    gap: 4rem;
-    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.section__pic-container{
-    height: 400px;
-    width: 400px;
-    margin: auto 0;
+.about-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+.about-containers {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.details-container {
+    flex: 1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: #f9f9f9;
+    /* Light Theme Background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease;
+}
+
+.details-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.details-container h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+    /* Light Theme Heading Color */
+}
+
+.details-container p {
+    color: #555;
+    /* Light Theme Text Color */
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.text-container {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    /* Light Theme Paragraph Color */
+    text-align: justify;
+    max-width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-containers {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .details-container {
+        padding: 1rem;
+    }
+}
+
+.arrow {
+    display: block;
+    margin: 2rem auto 0;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.arrow:hover {
+    transform: scale(1.1);
+}
+
+/* Dark Theme Overrides for About Section */
+body.tokyo-night-theme .details-container {
+    background: #2a2e38;
+    /* Darker Card Background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    border: 1px solid #3b4261;
+}
+
+body.tokyo-night-theme .details-container:hover {
+    background: #3b4261;
+    /* Slightly lighter on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.8);
+    transform: translateY(-5px);
+}
+
+body.tokyo-night-theme .details-container h3 {
+    color: #bb9af7;
+    /* Light Purple Heading */
+}
+
+body.tokyo-night-theme .details-container p {
+    color: #c0caf5;
+    /* Light Blue Text */
+}
+
+body.tokyo-night-theme .text-container {
+    color: #a9b1d6;
+    /* Soft White Paragraph Text */
+}
+
+body.tokyo-night-theme #about {
+    background-color: #1a1b26;
+    /* Dark Background */
+}
+
+body.tokyo-night-theme .arrow {
+    filter: brightness(0) invert(1);
+    /* White arrow for dark theme */
 }
 
 /* experience */
@@ -379,29 +553,29 @@ article .icon{
 #projects {
     position: relative;
   }
-  
+
   .color-container {
     border-color: rgb(163, 163, 163);
     background: rgb(250, 250, 250);
   }
-  
+
   .project-img {
     border-radius: 2rem;
     width: 90%;
     height: 90%;
   }
-  
+
   .project-title {
     margin: 1rem;
     color: black;
   }
-  
+
   .project-btn {
     color: black;
     border-color: rgb(163, 163, 163);
   }
 
- 
+
 
   /* Contact section */
 
@@ -411,7 +585,7 @@ article .icon{
     flex-direction: column;
     height: 70vh;
   }
-  
+
   .contact-info-upper-container {
     display: flex;
     justify-content: center;
@@ -422,7 +596,7 @@ article .icon{
     margin: 2rem auto;
     padding: 0.5rem;
   }
-  
+
   .contact-info-container {
     display: flex;
     align-items: center;
@@ -430,26 +604,632 @@ article .icon{
     gap: 0.5rem;
     margin: 1rem;
   }
-  
+
   .contact-info-container p {
     font-size: larger;
   }
-  
+
   .contact-icon {
     cursor: default;
   }
-  
+
   .email-icon {
     height: 2.5rem;
   }
-  
+
   /* FOOTER SECTION */
-  
+
   footer {
     height: 26vh;
     margin: 0 1rem;
   }
-  
+
   footer p {
     text-align: center;
   }
+
+/* Base Hidden State for Animated Elements */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(150px);
+    /* Offset downwards */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    /* Smooth animation */
+}
+
+/* Visible state triggers animation */
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+    /* Brings it to the original position */
+}
+
+
+.section__pic-container img {
+    max-width: 100%;
+    /* Limits the width to the container size */
+    max-height: 300px;
+    /* Sets a maximum height */
+    height: auto;
+    /* Maintains aspect ratio */
+    width: auto;
+    /* Adjusts width to maintain aspect ratio */
+    border-radius: 50%;
+    /* Keeps the image round */
+    border: 5px solid #fff;
+    /* White border for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow for depth */
+    object-fit: cover;
+    /* Ensures the image covers the designated area without distortion */
+    transition: transform 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+.section__pic-container {
+    width: 300px;
+    /* Set a fixed width for the container */
+    height: 350px;
+    /* Set a fixed height for the container */
+    overflow: hidden;
+    /* Hides any part of the image that exceeds the container size */
+    display: flex;
+    /* Enables flexbox properties */
+    align-items: center;
+    /* Centers the image vertically */
+    justify-content: center;
+    /* Centers the image horizontally */
+}
+
+.section__pic-container img:hover {
+    transform: scale(1.1);
+    /* Enlarges the image on hover */
+}
+/* Additional Specific Animations for Different Elements */
+.section__pic-container {
+    transform: translateY(50px) scale(0.9);
+    animation: scale-fade-in 0.8s 0.2s ease-out forwards;
+}
+
+.section__text__p1,
+.title {
+    transform: translateX(-50px) rotate(-5deg);
+    animation: twist-fade-in 0.8s 0.4s ease-out forwards;
+}
+
+.section__text__p2 {
+    transform: perspective(500px) translateZ(-30px);
+    animation: perspective-fade-in 0.8s 0.6s ease-out forwards;
+}
+
+.btn-container .btn {
+    transform: translateY(50px) scale(0.85);
+    animation: scale-fade-in 0.8s 0.8s ease-out forwards;
+}
+
+/* Keyframes for Specific Animations */
+@keyframes scale-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes twist-fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50px) rotate(-5deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+@keyframes perspective-fade-in {
+    from {
+        opacity: 0;
+        transform: perspective(500px) translateZ(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(500px) translateZ(0);
+    }
+}
+
+
+
+/* Tokyo Night Theme */
+
+/* General Background and Text */
+body.tokyo-night-theme {
+    background-color: #1a1b26;
+    /* Deep dark blue */
+    color: #c0caf5;
+    /* Light blue text */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Navigation Bar */
+body.tokyo-night-theme nav {
+    background-color: #2a2e38;
+    /* Darker nav background */
+    color: #c0caf5;
+}
+
+body.tokyo-night-theme .nav-links a {
+    color: #7dcfff;
+    /* Cyan links */
+    transition: color 0.3s ease;
+}
+
+body.tokyo-night-theme .nav-links a:hover {
+    color: #bb9af7;
+    /* Purple hover color */
+}
+
+body.tokyo-night-theme .logo {
+    color: #7aa2f7;
+    /* Soft blue */
+}
+
+/* Buttons */
+body.tokyo-night-theme .btn {
+    background-color: #444b6a;
+    /* Dark blue-gray */
+    color: #c0caf5;
+    border: 2px solid #7aa2f7;
+    transition: all 0.3s ease;
+}
+
+body.tokyo-night-theme .btn:hover {
+    background-color: #7dcfff;
+    /* Cyan */
+    color: #1a1b26;
+    /* Text on hover */
+    border-color: #bb9af7;
+    /* Purple */
+}
+
+/* Section Titles */
+body.tokyo-night-theme .title,
+body.tokyo-night-theme .experience-sub-title {
+    color: #7aa2f7;
+    /* Light blue headings */
+}
+
+/* Containers */
+body.tokyo-night-theme .details-container {
+    background-color: #24283b;
+    /* Dark card background */
+    color: #c0caf5;
+    border: 2px solid #7dcfff;
+    /* Cyan border */
+}
+
+body.tokyo-night-theme .details-container:hover {
+    border-color: #bb9af7;
+    /* Purple highlight */
+    box-shadow: 0px 4px 8px rgba(123, 144, 255, 0.3);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+/* Social Icons */
+body.tokyo-night-theme .icon {
+    filter: brightness(0) invert(1);
+    /* White icons for contrast */
+    transition: transform 0.3s ease;
+}
+
+body.tokyo-night-theme .icon:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+body.tokyo-night-theme footer {
+    background-color: #2a2e38;
+    /* Dark footer */
+    color: #c0caf5;
+    border-top: 2px solid #7dcfff;
+    text-align: center;
+}
+
+
+
+/* Tokyo Night Theme Fix for Readability */
+
+/* General Text Styling */
+body.tokyo-night-theme p,
+body.tokyo-night-theme .section__text p,
+body.tokyo-night-theme .text-container p {
+    color: #c0caf5;
+    /* Light blue-gray for paragraphs */
+}
+
+/* Section-specific Text */
+body.tokyo-night-theme .section__text__p1,
+body.tokyo-night-theme .section__text__p2 {
+    color: #7dcfff;
+    /* Cyan highlight for intro text */
+}
+
+/* About Me Paragraph */
+body.tokyo-night-theme .text-container p {
+    color: #c0caf5;
+    /* Light text for about me paragraphs */
+    line-height: 1.8;
+}
+
+/* Titles and Subtitles */
+body.tokyo-night-theme .title {
+    color: #7aa2f7;
+    /* Light blue titles */
+}
+
+body.tokyo-night-theme .experience-sub-title {
+    color: #bb9af7;
+    /* Purple subtitles */
+}
+
+/* Buttons */
+body.tokyo-night-theme .btn-container .btn {
+    color: #c0caf5;
+    border-color: #7aa2f7;
+}
+
+body.tokyo-night-theme .btn-container .btn:hover {
+    background-color: #7aa2f7;
+    color: #1a1b26;
+    border-color: #bb9af7;
+}
+
+/* Section Containers */
+body.tokyo-night-theme .details-container {
+    background-color: #2a2e38;
+    /* Dark card background */
+    color: #c0caf5;
+    /* Light text */
+}
+
+
+body.tokyo-night-theme #contact {
+    background-color: #1a1b26;
+    /* Deep dark background */
+    color: #c0caf5;
+    /* Light gray-blue text */
+}
+
+body.tokyo-night-theme .contact-info-upper-container {
+    background-color: #24283b;
+    /* Slightly lighter dark blue */
+    border: 2px solid #7dcfff;
+    /* Cyan border */
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.tokyo-night-theme .contact-info-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+body.tokyo-night-theme .contact-info-container p {
+    color: #c0caf5;
+    /* Light text for contact details */
+    font-size: 1.2rem;
+}
+
+body.tokyo-night-theme .contact-icon {
+    height: 2.5rem;
+    filter: brightness(0) invert(1);
+    /* Makes icons white */
+    transition: transform 0.3s ease;
+}
+
+body.tokyo-night-theme .contact-icon:hover {
+    transform: scale(1.1);
+    /* Slight zoom effect on hover */
+}
+
+body.tokyo-night-theme a {
+    color: #7dcfff;
+    /* Cyan for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+body.tokyo-night-theme a:hover {
+    color: #bb9af7;
+    /* Purple on hover */
+    text-decoration: underline;
+}
+
+/* Footer Styling for Contact Page */
+body.tokyo-night-theme footer {
+    background-color: #2a2e38;
+    color: #c0caf5;
+    border-top: 2px solid #7dcfff;
+}
+
+
+/* Light Theme - Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    background-color: #ffffff;
+    /* White background */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333333;
+    /* Dark gray */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover {
+    color: #555555;
+    /* Slightly lighter gray */
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #333333;
+    /* Dark gray text */
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #333333;
+    /* Underline */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #555555;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+/* Tokyo Night Theme - Navigation Bar */
+body.tokyo-night-theme nav {
+    background-color: #24283b;
+    /* Dark nav background */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.tokyo-night-theme .logo {
+    color: #7aa2f7;
+    /* Light blue */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+body.tokyo-night-theme .logo:hover {
+    color: #bb9af7;
+    /* Purple hover */
+    transform: scale(1.05);
+}
+
+body.tokyo-night-theme .nav-links a {
+    color: #c0caf5;
+    /* Light blue text */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+body.tokyo-night-theme .nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #7dcfff;
+    /* Cyan underline */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+body.tokyo-night-theme .nav-links a:hover {
+    color: #7dcfff;
+    /* Cyan hover */
+}
+
+body.tokyo-night-theme .nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Default (Light Theme) Tick Icon */
+article .icon {
+    height: 2rem;
+    transition: transform 0.3s ease;
+}
+article .icon:hover {
+    transform: scale(1.1);
+}
+
+/* Tokyo Night Theme - Recolor Tick to a Visible Color */
+/* Tokyo Night Theme - Experience Tick Icon */
+body.tokyo-night-theme article .icon {
+    filter: brightness(1) invert(0);
+    /* Inverts color to white for visibility in the dark theme */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+body.tokyo-night-theme article .icon:hover {
+    filter: drop-shadow(0px 0px 5px #7dcfff);
+    /* Add subtle glow on hover */
+    transform: scale(1.1);
+}
+
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: #333333;
+    /* Default for light theme */
+    transition: all 0.3s ease;
+}
+
+/* Tokyo Night Theme - Hamburger Icon */
+body.tokyo-night-theme .hamburger-icon span {
+    background-color: #c0caf5;
+    /* Light blue-gray */
+}
+
+body.tokyo-night-theme .hamburger-icon.open span:first-child,
+body.tokyo-night-theme .hamburger-icon.open span:last-child {
+    background-color: #7dcfff;
+    /* Cyan color when expanded */
+}
+
+/* Expanded Menu */
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    /* Default for light theme */
+    width: fit-content;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+body.tokyo-night-theme .menu-links {
+    background-color: #2a2e38;
+    /* Dark background for Tokyo Night Theme */
+    border: 1px solid #444b6a;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-links.open {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: black;
+    /* Default */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+body.tokyo-night-theme .menu-links a {
+    color: #c0caf5;
+    /* Light blue-gray */
+}
+
+body.tokyo-night-theme .menu-links a:hover {
+    color: #7dcfff;
+    /* Cyan hover effect */
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #444;
+    /* Dark border for visibility */
+    background-color: #f9f9f9;
+    /* Light background */
+    color: #444;
+    /* Dark text for light theme */
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #444;
+    /* Dark background on hover */
+    color: #fff;
+    /* White text on hover */
+    border-color: #444;
+}
+
+/* Dark Theme Button Styling */
+body.tokyo-night-theme .btn {
+    background-color: #7aa2f7;
+    /* Blue background for dark theme */
+    color: #1a1b26;
+    /* Darker text */
+    border-color: #7aa2f7;
+    /* Border matches background */
+}
+
+body.tokyo-night-theme .btn:hover {
+    background-color: #bb9af7;
+    /* Purple hover */
+    border-color: #bb9af7;
+    color: #1a1b26;
+    /* Text remains visible */
+}
+
+
