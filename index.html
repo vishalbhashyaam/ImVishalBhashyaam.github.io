@@ -363,7 +363,15 @@
                 <h2 class="experience-sub-title project-title">Yolov7-Ghost: Object detection for Autonomous vehicles</h2>
                 <div class="btn-container">
 
-                    <button id ="playButton" class="btn btn-color-2 project-btn" >Best Paper Certificate</button>
+                  <!-- Button -->
+                  <button id="playButton" class="btn btn-color-2 project-btn" onclick="showModal()">Best Paper Certificate</button>
+
+                  <!-- Image Modal -->
+                  <div id="imageModal" class="modal">
+                    <span class="close-btn" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="certificateImage" src="assets/Vishal Bhashyaam best paper certificate.jpg"
+                      alt="Best Paper Certificate" />
+                  </div>
 
                 </div>
             </div>
