@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="mediaqueries.css">
 
 </head>
-<body>
+<body class="tokyo-night-theme">
     <nav id = "desktop-nav">
 
         <div class = "logo">Vishal Bhashyaam</div>
@@ -37,7 +37,7 @@
         </div>
         </div>
     </nav>
-    <section id="profile">
+    <!-- <section id="profile">
         <div class="section__pic-container">
             <img src = "assets/Profile pic 1.png" alt="Vishal Bhashyaam profile picture"/>
         </div>
@@ -62,38 +62,73 @@
         alt="Arrow icon"
         class="icon arrow"
         onclick="location.href='#about'"
-      />
-    </section>
-    <section id="about">
-        <p class="section__text__p1">Get to Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="section-container">
-            <div class="section__pic-container">
-                <img src="assets/WhatsApp Image 2024-09-17 at 10.02.48.jpeg" alt="Profile picture" class ="about-pic">
-            </div>
-            <div class="about-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <img src="./assets/experience.png" alt="experience icon", class ="icon"/>
-                        <h3>Experience</h3>
-                        <p>as<br>Software Developer</p>
-                    </div>
-                    <div class="details-container">
-                        <img src="./assets/education.png" alt="education icon", class ="icon"/>
-                        <h3>Education</h3>
-                        <p>B.Tech Computer Science and Engineering <br>M.S Data Science</p>
-                    </div>
-                </div>
-                <div class="text-container">
-                    <p>I am a dedicated and passionate individual currently pursuing Master's in Data Science at The University of Arizona. My journey commenced with a Bachelor's in Computer Science from SRM Institute in India. One of my proudest achievements was the development of YOLOv7-Ghost, recognized with the Best Paper Award at IRCICD’23, significantly enhancing object detection for autonomous driving systems. Beyond academics and professional pursuits, I found joy in serving the community, exemplified by my involvement in the SRM Rotaract Club, where I actively participated in projects supporting tribal communities, orphans, and abandoned animals. Moreover, as a former representative of the Tamil Nadu state team in cricket, sports remain an integral part of my life. </p>
-                        <br>
-                        <p>Overall, my journey encompasses a blend of academic excellence, technical proficiency, a drive for innovation, and a deep-seated commitment to giving back to society, all of which continue to shape my perspective and aspirations in the ever-evolving field of data science and technology.</p>
-                </div>
-            </div>
+      /> -->
+      <!-- </section> -->
+
+      <section id="profile" class="animate-on-scroll">
+        <div class="section__pic-container animate-on-scroll">
+          <img src="assets/WhatsApp Image 2024-09-17 at 10.03.23.jpeg" alt="Vishal Bhashyaam profile picture" />
         </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#experience'">
-    </section>
-    <section id="experience">
+        <div class="section__text animate-on-scroll">
+          <p class="section__text__p1 animate-on-scroll">Hello, I'm</p>
+          <h1 class="title animate-on-scroll">Vishal Bhashyaam</h1>
+          <p class="section__text__p2 animate-on-scroll">Aspiring Data Scientist</p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 animate-on-scroll" onclick="window.open('./assets/Vishal Bhashyaam Resume.pdf')">
+              Download CV
+            </button>
+            <button class="btn btn-color-1 animate-on-scroll" onclick="location.href='./#contact'">
+              Contact Info
+            </button>
+          </div>
+          <div id="socials-container">
+            <img src="./assets/linkedin.png" alt="My linkedin profile" class="icon animate-on-scroll"
+              onclick="location.href='https://www.linkedin.com/in/vishal-bhashyaam'" />
+            <img src="./assets/github.png" alt="My Github profile" class="icon animate-on-scroll"
+              onclick="location.href='https://www.github.com/vishalbhashyaam'" />
+          </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow animate-on-scroll"
+          onclick="location.href='#about'" />
+      </section>
+
+  <section id="about" class="animate-on-scroll">
+    <p class="section__text__p1">Get to Know More</p>
+    <h1 class="title">About Me</h1>
+    <div class="section-container">
+      <div class="about-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h3>Experience</h3>
+            <p>Data Science Intern at Pull Logic Inc</p>
+            <p>Software Developer Intern at Techno Talent Inc</p>
+          </div>
+          <div class="details-container">
+            <h3>Education</h3>
+            <p>Masters of Science in Data Science</p>
+            <p>Bachelors of Technology in Computer Science and Engineering</p>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>
+            I am a dedicated and passionate individual currently pursuing a Master's in Data Science at The University of
+            Arizona. My journey commenced with a Bachelor's in Computer Science from SRM Institute in India. One of my
+            proudest achievements was the development of YOLOv7-Ghost, recognized with the Best Paper Award at IRCICD’23,
+            significantly enhancing object detection for autonomous driving systems.
+          </p>
+          <br>
+          <p>
+            Beyond academics and professional pursuits, I found joy in serving the community, exemplified by my
+            involvement in the SRM Rotaract Club, where I actively participated in projects supporting tribal communities,
+            orphans, and abandoned animals. Moreover, as a former representative of the Tamil Nadu state team in cricket,
+            sports remain an integral part of my life.
+          </p>
+        </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#experience'">
+  </section>
+    <section id="experience" class="animate-on-scroll">
         <p class="section__text__p1">Explore My</p>
         <h1 class="title">Experience</h1>
         <div class="experience-details-container">
@@ -203,7 +238,7 @@
                   />
                   <div>
                     <h3>Machine Learning</h3>
-                    
+
                   </div>
                 </article>
                 <article>
@@ -214,7 +249,7 @@
                   />
                   <div>
                     <h3>Deep Learning</h3>
-                    
+
                   </div>
                 </article>
                 <article>
@@ -225,7 +260,7 @@
                   />
                   <div>
                     <h3>Computer Vision</h3>
-                    
+
                   </div>
                 </article>
                 <article>
@@ -236,7 +271,7 @@
                   />
                   <div>
                     <h3>Data structures</h3>
-                    
+
                   </div>
                 </article>
                 <article>
@@ -247,7 +282,7 @@
                     />
                     <div>
                       <h3>Data Analysis</h3>
-                      
+
                     </div>
                   </article>
                   <article>
@@ -258,7 +293,7 @@
                     />
                     <div>
                       <h3>Data Mining</h3>
-                      
+
                     </div>
                   </article>
                 <article>
@@ -269,7 +304,7 @@
                   />
                   <div>
                     <h3>Database Management</h3>
-                   
+
                   </div>
                 </article>
                 <article>
@@ -280,7 +315,7 @@
                   />
                     <div>
                     <h3>Natural Language Processing(NLP)</h3>
-                    
+
                   </div>
                 </article>
                 <article>
@@ -291,7 +326,7 @@
                   />
                   <div>
                     <h3>Server Development (Django)</h3>
-                    
+
                   </div>
                 </article>
                 <article>
@@ -302,7 +337,7 @@
                   />
                   <div>
                     <h3>Git - Version Control</h3>
-                    
+
                   </div>
                 </article>
               </div>
@@ -316,7 +351,7 @@
           onclick="location.href='#projects'"
         />
       </section>
-      <section id = "projects">
+      <section id = "projects" class="animate-on-scroll">
         <p class="section__text__p1">Browse My Recent</p>
         <h1 class="title">Projects</h1>
         <div class="experience-details-container">
@@ -327,9 +362,9 @@
                 </div>
                 <h2 class="experience-sub-title project-title">Yolov7-Ghost: Object detection for Autonomous vehicles</h2>
                 <div class="btn-container">
-                    
+
                     <button id ="playButton" class="btn btn-color-2 project-btn" >Best Paper Certificate</button>
-                    
+
                 </div>
             </div>
             <div class="details-container color-container">
@@ -340,9 +375,9 @@
 Intelligent Banknote Authentication: Leveraging Machine Learning for Robust Fraud Detection</h2>
                 <div class="btn-container">
                     <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/vishalbhashyaam/nnet-bernoulliNB-banknoteauth'">Github</button>
-                   
+
                 </div>
-            </div> 
+            </div>
             <div class="details-container color-container">
                 <div class="aritcle-container">
                     <img src="./assets/apple-music-spotify-graphic.webp" alt="Project 1" class="project-img"/>
@@ -361,7 +396,7 @@ Intelligent Banknote Authentication: Leveraging Machine Learning for Robust Frau
           onclick="location.href='#contact'"
         />
       </section>
-      <section id="contact">
+      <section id="contact" class="animate-on-scroll">
         <p class="section__text__p1">Get in Touch</p>
         <h1 class="title">Contact Me</h1>
         <div class="contact-info-upper-container">
@@ -398,4 +433,4 @@ Intelligent Banknote Authentication: Leveraging Machine Learning for Robust Frau
       </footer>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
